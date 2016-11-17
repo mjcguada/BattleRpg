@@ -210,6 +210,9 @@ Battle.prototype._attack = function () {
   var self = this;
   self._showTargets(function onTarget(targetId) {
     // Implementa lo que pasa cuando se ha seleccionado el objetivo.
+    
+    this._action.danyo = this._charactersById[this._turns.activeCharacterId].weapon.damage;
+    this._action.targetId = targetId;
     self._executeAction();
     self._restoreDefense(targetId);
   });
