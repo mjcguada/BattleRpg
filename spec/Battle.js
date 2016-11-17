@@ -536,7 +536,7 @@ describe('Battle type', function () {
 
     });
 
-    xdescribe('Cast action', function () {
+    describe('Cast action', function () {
       console.log('Comprobando si cast esta activado');
       it('requires to choose an scroll.', function (done) {
         battle.on('turn', function () {

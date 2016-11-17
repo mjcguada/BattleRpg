@@ -221,7 +221,7 @@ Battle.prototype._cast = function () {
     var caster = this._charactersById[this._turns.activeCharacterId];
     scroll = this._grimoires[caster.party].scrollId;
     caster.mp -= scroll.cost;
-    self._showTargets(function onTarget(targetId)){
+    self._showTargets(function onTarget(targetId) {
       this._action.targetId = targetId;
       this.action.truco = scrollId;
       self._action.effect = scroll.effect;
