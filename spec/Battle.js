@@ -140,7 +140,7 @@ describe('Battle type', function () {
 
   });
 
-  xdescribe('Parties in battle', function () {
+  describe('Parties in battle', function () {
 
     it('can contain repeated members, each will be assigned a different id.',
     function () {
@@ -153,7 +153,7 @@ describe('Battle type', function () {
 
   });
 
-  describe('Battle actions', function () {
+  xdescribe('Battle actions', function () {
 
     it('are 3: attack, defend and cast.', function () {
       battle.on('turn', function () {
@@ -536,7 +536,7 @@ describe('Battle type', function () {
 
     });
 
-    describe('Cast action', function () {
+    xdescribe('Cast action', function () {
       console.log('Comprobando si cast esta activado');
       it('requires to choose an scroll.', function (done) {
         battle.on('turn', function () {
