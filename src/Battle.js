@@ -218,6 +218,16 @@ Battle.prototype._attack = function () {
 Battle.prototype._cast = function () {
   var self = this;
   self._showScrolls(function onScroll(scrollId, scroll) {
+    var caster = this._charactersById[this._turns.activeCharacterId];
+    scroll = this._grimoires[caster.party].scrollId;
+    caster.mp -= scroll.cost;
+    self._showTargets(function onTarget(targetId){
+      this._action.targetId = targetId;
+      this.action.truco = scrollId;
+      self._action.effect = scroll.effect;
+      self._executeAction();
+      self._restoreDefense(targetId);
+    });    
     // Implementa lo que pasa cuando se ha seleccionado el hechizo.
   });
 };
